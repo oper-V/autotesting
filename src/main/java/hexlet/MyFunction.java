@@ -1,5 +1,5 @@
 package hexlet;
 
 public interface MyFunction {
-    int[] apply(int[] array, int quantity);
+    int apply(String[] array, String value);
 }

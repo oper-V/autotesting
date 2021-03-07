@@ -1,30 +1,22 @@
 package hexlet;
 
-import java.util.Arrays;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class UserTest {
 
     //BEGIN (write your solution here)
-    public static void testTake(MyFunction take) {
-        test1(take);
-        test2(take);
-        test3(take);
+    public static void testIndexOf(MyFunction indexOf) {
+        String[] incomeString1 = new String[] {"one", "two", "three", "four", "five"};
+        String[] incomeString2 = new String[] {"one", "three", "three", "three", "three"};
+        String[] incomeEmptyString = new String[] {};
+
+        assertThat(indexOf.apply(incomeString1, "two")).isEqualTo(1);
+        assertThat(indexOf.apply(incomeString1, "six")).isEqualTo(-1);
+        assertThat(indexOf.apply(incomeString1, "")).isEqualTo(-1);
+        assertThat(indexOf.apply(incomeString1, null)).isEqualTo(-1);
+        assertThat(indexOf.apply(incomeString2, "three")).isEqualTo(1);
+        assertThat(indexOf.apply(incomeEmptyString, "")).isEqualTo(-1);
     }
 
-    public static void test1(MyFunction take) { // Нормальная работа метода
-        int [] expectedResult = new int[] {1, 2};
-        assert Arrays.equals(take.apply(new int[] {1, 2, 3}, 2), expectedResult) : "Метод не работает!";
-    }
-
-    public static void test2(MyFunction take) {
-        int [] expectedResult = new int[] {};
-        assert Arrays.equals(take.apply(new int[] {}, 2), expectedResult) : "Метод не работает!";
-
-    }
-
-    public static void test3(MyFunction take) {
-        int [] expectedResult = new int[] {1, 2, 3};
-        assert Arrays.equals(take.apply(new int[] {1, 2, 3}, 7), expectedResult) : "Метод не работает!";
-    }
     //END
 }
