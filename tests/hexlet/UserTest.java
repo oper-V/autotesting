@@ -10,7 +10,8 @@ public class UserTest {
         String[] incomeString2 = new String[] {"one", "three", "three", "three", "three"};
         String[] incomeEmptyString = new String[] {};
 
-        assertThat(indexOf.apply(incomeString1, "two")).isEqualTo(1);
+
+        assertThat(indexOf.apply(incomeString1, "two")).isEqualTo(true);
         assertThat(indexOf.apply(incomeString1, "six")).isEqualTo(-1);
         assertThat(indexOf.apply(incomeString1, "")).isEqualTo(-1);
         assertThat(indexOf.apply(incomeString1, null)).isEqualTo(-1);
